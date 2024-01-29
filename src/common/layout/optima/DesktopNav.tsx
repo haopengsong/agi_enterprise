@@ -18,6 +18,10 @@ import { InvertedBar, InvertedBarCornerItem } from './components/InvertedBar';
 import { useOptimaDrawers } from './useOptimaDrawers';
 import { useOptimaLayout } from './useOptimaLayout';
 
+import { ListDivider, ListItemDecorator, MenuItem, Typography, useColorScheme } from '@mui/joy';
+import { Box, IconButton, styled } from '@mui/joy';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 const desktopNavBarSx: SxProps = {
   zIndex: themeZIndexDesktopNav,
@@ -47,11 +51,20 @@ export function DesktopNav(props: { component: React.ElementType, currentApp?: N
       toggleDrawer();
   }, [logoButtonTogglesPane, toggleDrawer]);
 
+  const { mode: colorMode, setMode: setColorMode } = useColorScheme();
+
+  const handleToggleDarkMode = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    setColorMode(colorMode === 'dark' ? 'light' : 'dark');
+  };
+
 
   // App items
   const navAppItems = React.useMemo(() => {
     return navItems.apps
-      .filter(_app => checkVisibileIcon(_app, false, props.currentApp))
+      .filter(_app => checkVisibileIcon(_app, false, props.currentApp) && !_app.name.toLowerCase().includes('call') 
+        && !_app.name.toLowerCase().includes('news') 
+        && !_app.name.toLowerCase().includes('personas'))
       .map((app, appIdx) => {
         const isActive = app === props.currentApp;
         const isDrawerable = isActive && !app.hideDrawer;
@@ -140,6 +153,18 @@ export function DesktopNav(props: { component: React.ElementType, currentApp?: N
         </Tooltip>
       </InvertedBarCornerItem>
 
+          <DesktopNavGroupBox>
+
+      <IconButton
+        variant='outlined'
+        onClick={handleToggleDarkMode}
+        sx={{ ml: 'auto' }}
+      >
+        {colorMode !== 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
+      </IconButton>
+      </DesktopNavGroupBox>
+
+{/*
       <DesktopNavGroupBox>
         {navAppItems}
       </DesktopNavGroupBox>
@@ -149,6 +174,7 @@ export function DesktopNav(props: { component: React.ElementType, currentApp?: N
         {navModalItems}
       </DesktopNavGroupBox>
 
+  */}
     </InvertedBar>
   );
 }

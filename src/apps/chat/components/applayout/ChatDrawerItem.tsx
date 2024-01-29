@@ -144,7 +144,7 @@ function ChatDrawerItem(props: {
 
   const titleRowComponent = React.useMemo(() => <>
 
-    {/* Symbol, if globally enabled */}
+    {/* Symbol, if globally enabled 
     {props.showSymbols && <ListItemDecorator>
       {assistantTyping
         ? (
@@ -163,6 +163,8 @@ function ChatDrawerItem(props: {
           </Typography>
         )}
     </ListItemDecorator>}
+
+    */ }
 
     {/* Title */}
     {!isEditingTitle ? (
@@ -262,14 +264,14 @@ function ChatDrawerItem(props: {
             <Divider orientation='vertical' sx={{ my: 1, opacity: 0.5 }} />
           </>}
 
-          <Tooltip disableInteractive title='Rename'>
+          <Tooltip disableInteractive title='重命名'>
             <FadeInButton size='sm' disabled={isEditingTitle} onClick={handleTitleEditBegin}>
               <EditIcon />
             </FadeInButton>
           </Tooltip>
 
           {!isNew && <>
-            <Tooltip disableInteractive title='Auto-Title'>
+            <Tooltip disableInteractive title='自动命名'>
               <FadeInButton size='sm' disabled={isEditingTitle} onClick={handleTitleEditAuto}>
                 <AutoFixHighIcon />
               </FadeInButton>
@@ -277,7 +279,7 @@ function ChatDrawerItem(props: {
 
             <Divider orientation='vertical' sx={{ my: 1, opacity: 0.5 }} />
 
-            <Tooltip disableInteractive title='Export'>
+            <Tooltip disableInteractive title='导出'>
               <FadeInButton size='sm' onClick={handleConversationExport}>
                 <FileDownloadOutlinedIcon />
               </FadeInButton>
@@ -291,14 +293,14 @@ function ChatDrawerItem(props: {
           {/* Delete [armed, arming] buttons */}
           {!props.isLonely && !searchFrequency && <>
             {deleteArmed && (
-              <Tooltip disableInteractive title='Confirm Deletion'>
+              <Tooltip disableInteractive title='确认删除'>
                 <FadeInButton key='btn-del' variant='solid' color='success' size='sm' onClick={handleConversationDelete} sx={{ opacity: 1 }}>
                   <DeleteForeverIcon sx={{ color: 'danger.solidBg' }} />
                 </FadeInButton>
               </Tooltip>
             )}
 
-            <Tooltip disableInteractive title={deleteArmed ? 'Cancel Delete' : 'Delete'}>
+            <Tooltip disableInteractive title={deleteArmed ? '取消' : '删除?'}>
               <FadeInButton key='btn-arm' size='sm' onClick={deleteArmed ? handleDeleteButtonHide : handleDeleteButtonShow} sx={deleteArmed ? { opacity: 1 } : {}}>
                 {deleteArmed ? <CloseIcon /> : <DeleteOutlineIcon />}
               </FadeInButton>

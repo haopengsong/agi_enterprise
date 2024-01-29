@@ -64,7 +64,6 @@ export function ExportChats(props: { config: ExportConfig, onClose: () => void }
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, alignItems: 'center', py: 1 }}>
 
       <Typography level='title-sm'>
-        Share / Download <strong>current chat</strong>:
       </Typography>
 
       <Button variant='soft' disabled={!hasConversation}
@@ -72,7 +71,7 @@ export function ExportChats(props: { config: ExportConfig, onClose: () => void }
               endDecorator={downloadedJSONState === 'ok' ? <DoneIcon /> : downloadedJSONState === 'fail' ? '✘' : <FileDownloadIcon />}
               sx={{ minWidth: 240, justifyContent: 'space-between' }}
               onClick={handleDownloadConversationJSON}>
-        Download · JSON
+        下载 · JSON
       </Button>
 
       <Button variant='soft' disabled={!hasConversation}
@@ -80,7 +79,7 @@ export function ExportChats(props: { config: ExportConfig, onClose: () => void }
               endDecorator={downloadedMarkdownState === 'ok' ? <DoneIcon /> : downloadedMarkdownState === 'fail' ? '✘' : <FileDownloadIcon />}
               sx={{ minWidth: 240, justifyContent: 'space-between' }}
               onClick={handleDownloadConversationMarkdown}>
-        Export · Markdown
+        导出 · Markdown
       </Button>
 
       {enableSharing && (
@@ -102,14 +101,13 @@ export function ExportChats(props: { config: ExportConfig, onClose: () => void }
       {/*</Button>*/}
 
       <Typography level='title-sm' sx={{ mt: 2 }}>
-        Store / Transfer <strong>all chats</strong>:
       </Typography>
       <Button variant='soft' size='md'
               color={downloadedAllState === 'ok' ? 'success' : downloadedAllState === 'fail' ? 'warning' : 'primary'}
               endDecorator={downloadedAllState === 'ok' ? <DoneIcon /> : downloadedAllState === 'fail' ? '✘' : <FileDownloadIcon />}
               sx={{ minWidth: 240, justifyContent: 'space-between' }}
               onClick={handleDownloadAllConversationsJSON}>
-        Download All · JSON
+        导出所有对话为JSON格式
       </Button>
     </Box>
 

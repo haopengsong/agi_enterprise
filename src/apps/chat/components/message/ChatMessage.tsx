@@ -76,13 +76,14 @@ export function makeAvatar(messageAvatar: string | null, messageRole: DMessage['
   const mascotSx = size === 'sm' ? avatarIconSx : { width: 64, height: 64 };
   switch (messageRole) {
     case 'system':
-      return <SettingsSuggestIcon sx={avatarIconSx} />;  // https://em-content.zobj.net/thumbs/120/apple/325/robot_1f916.png
+      return <Avatar src={'icons/openai-logomark.svg'} sx={avatarIconSx} />;            // https://www.svgrepo.com/show/306500/openai.svg
 
     case 'user':
       return <Face6Icon sx={avatarIconSx} />;            // https://www.svgrepo.com/show/306500/openai.svg
 
     case 'assistant':
       // typing gif (people seem to love this, so keeping it after april fools')
+      /*
       const isTextToImage = messageOriginLLM === 'DALL·E' || messageOriginLLM === 'Prodia';
       const isReact = messageOriginLLM?.startsWith('react-');
       if (messageTyping) {
@@ -115,8 +116,11 @@ export function makeAvatar(messageAvatar: string | null, messageRole: DMessage['
       </Box>;
 
       // default assistant avatar
-      return <SmartToyOutlinedIcon sx={avatarIconSx} />; // https://mui.com/static/images/avatar/2.jpg
+      //return <SmartToyOutlinedIcon sx={avatarIconSx} />; // https://mui.com/static/images/avatar/2.jpg
+      */
+      return <Avatar src={'icons/openai-logomark.svg'} sx={avatarIconSx} />;            // https://www.svgrepo.com/show/306500/openai.svg
   }
+
   return <Avatar alt={messageSender} />;
 }
 
@@ -460,7 +464,7 @@ export function ChatMessage(props: {
       {/* Avatar */}
       {showAvatars && (
         <Box
-          onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}
+          onMouseEnter={() => setIsHovering(false)} onMouseLeave={() => setIsHovering(false)}
           onClick={event => setOpsMenuAnchor(event.currentTarget)}
           sx={{
             // flexBasis: 0, // this won't let the item grow
@@ -585,7 +589,7 @@ export function ChatMessage(props: {
 
 
       {/* Operations Menu (3 dots) */}
-      {!!opsMenuAnchor && (
+      {!!!opsMenuAnchor && (
         <CloseableMenu
           dense placement='bottom-end' sx={{ minWidth: 280 }}
           open anchorEl={opsMenuAnchor} onClose={closeOperationsMenu}

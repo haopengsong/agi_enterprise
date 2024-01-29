@@ -25,8 +25,14 @@ function AppBarLLMDropdown(props: {
   // build model menu items, filtering-out hidden models, and add Source separators
   const llmItems: DropdownItems = {};
   let prevSourceId: DModelSourceId | null = null;
-  for (const llm of props.llms) {
 
+  for (const llm of props.llms) {
+    // continue if the title of llm contains 1106 but not with 3.5
+    if ( (llm.label.includes('1106') || llm.label.includes('0613') ) && !llm.label.includes('3.5'))
+      continue; 
+    // break when llmItems has size 1
+    if (Object.keys(llmItems).length === 2)
+      break;
     // filter-out hidden models
     if (!(!llm.hidden || llm.id === props.chatLlmId))
       continue;
@@ -57,10 +63,10 @@ function AppBarLLMDropdown(props: {
     <PageBarDropdown
       items={llmItems}
       value={props.chatLlmId} onChange={handleChatLLMChange}
-      placeholder={props.placeholder || 'Models …'}
+      placeholder={props.placeholder || '开始'}
       appendOption={<>
 
-        {props.chatLlmId && (
+        {false && props.chatLlmId && (
           <ListItemButton key='menu-opt' onClick={handleOpenLLMOptions}>
             <ListItemDecorator><SettingsIcon color='success' /></ListItemDecorator>
             <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'space-between', gap: 1 }}>
@@ -73,7 +79,7 @@ function AppBarLLMDropdown(props: {
         <ListItemButton key='menu-llms' onClick={openModelsSetup}>
           <ListItemDecorator><BuildCircleIcon color='success' /></ListItemDecorator>
           <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'space-between', gap: 1 }}>
-            Models
+            配置模型
             <KeyStroke combo='Ctrl + Shift + M' />
           </Box>
         </ListItemButton>

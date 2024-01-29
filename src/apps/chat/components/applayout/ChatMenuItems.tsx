@@ -70,6 +70,7 @@ export function ChatMenuItems(props: {
     {/*  </Typography>*/}
     {/*</ListItem>*/}
 
+    { /*
     <MenuItem onClick={handleToggleSystemMessages}>
       <ListItemDecorator><SettingsSuggestIcon /></ListItemDecorator>
       System message
@@ -96,11 +97,13 @@ export function ChatMenuItems(props: {
         Cleanup ...
       </span>
     </MenuItem>
+    */ 
+    }
 
     <MenuItem disabled={disabled} onClick={handleConversationClear}>
       <ListItemDecorator><ClearIcon /></ListItemDecorator>
       <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'space-between', gap: 1 }}>
-        Reset Chat
+        重置对话
         {!disabled && <KeyStroke combo='Ctrl + Alt + X' />}
       </Box>
     </MenuItem>

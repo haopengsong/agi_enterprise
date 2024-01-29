@@ -30,7 +30,7 @@ export function FormInputKey(props: {
   return (
     <FormControl>
 
-      {!!props.label && <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+      {!!props.label && <Box sx={{ display: 'contents', flexDirection: 'row', alignItems: 'baseline', flexWrap: 'wrap', justifyContent: 'space-between' }}>
         <FormLabel>{props.label}</FormLabel>
         {!!props.rightLabel && <FormHelperText sx={{ display: 'block' }}>
           {props.rightLabel}
@@ -46,6 +46,8 @@ export function FormInputKey(props: {
         error={props.isError}
         startDecorator={!props.noKey && <KeyIcon />}
         endDecorator={endDecorator}
+                disabled
+        style={{ display: 'none' }}
       />
 
       {props.description && <FormHelperText sx={{ display: 'block' }}>{props.description}</FormHelperText>}

@@ -429,17 +429,16 @@ export function Composer(props: {
     ? 'warning'
     : isReAct ? 'success' : isDraw ? 'warning' : 'primary';
 
-  const textPlaceholder: string =
+    const textPlaceholder: string =
     isDraw
-      ? 'Describe an idea or a drawing...'
+      ? '描述一个想法或一幅图画...'
       : isReAct
         ? 'Multi-step reasoning question...'
         : props.isDeveloperMode
-          ? 'Chat with me · drop source files · attach code...'
+          ? '请输入对话内容...'
           : props.capabilityHasT2I
-            ? 'Chat · /react · /draw · drop files...'
-            : 'Chat · /react · drop files...';
-
+            ? '请输入对话内容...'
+            : '请输入对话内容...';
 
   return (
     <Box aria-label='User Message' component='section' sx={props.sx}>
@@ -453,27 +452,31 @@ export function Composer(props: {
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
 
               {/* [mobile] Mic button */}
-              {isSpeechEnabled && <ButtonMicMemo variant={micVariant} color={micColor} onClick={handleToggleMic} />}
+              { isSpeechEnabled && <ButtonMicMemo variant={micVariant} color={micColor} onClick={handleToggleMic} />  }
 
               <Dropdown>
                 <MenuButton slots={{ root: IconButton }}>
                   <AddCircleOutlineIcon />
                 </MenuButton>
                 <Menu>
-                  {/* Responsive Camera OCR button */}
+
+                  {/* Responsive Camera OCR button                   
                   <MenuItem>
                     <ButtonAttachCameraMemo onOpenCamera={openCamera} />
                   </MenuItem>
+                  */}
 
-                  {/* Responsive Open Files button */}
-                  <MenuItem>
+                  {/* Responsive Open Files button                   <MenuItem>
                     <ButtonAttachFileMemo onAttachFilePicker={handleAttachFilePicker} />
                   </MenuItem>
+                  */}
+
 
                   {/* Responsive Paste button */}
-                  {supportsClipboardRead && <MenuItem>
+                  { /* supportsClipboardRead && <MenuItem>
                     <ButtonAttachClipboardMemo onClick={attachAppendClipboardItems} />
-                  </MenuItem>}
+                </MenuItem> 
+                */ }
                 </Menu>
               </Dropdown>
 
@@ -489,10 +492,10 @@ export function Composer(props: {
               <ButtonAttachFileMemo onAttachFilePicker={handleAttachFilePicker} />
 
               {/* Responsive Paste button */}
-              {supportsClipboardRead && <ButtonAttachClipboardMemo onClick={attachAppendClipboardItems} />}
+              {  supportsClipboardRead && <ButtonAttachClipboardMemo onClick={attachAppendClipboardItems} />  }
 
               {/* Responsive Camera OCR button */}
-              {labsCameraDesktop && <ButtonAttachCameraMemo onOpenCamera={openCamera} />}
+              { /* labsCameraDesktop && <ButtonAttachCameraMemo onOpenCamera={openCamera} /> */ }
 
             </Box>
           )}
@@ -560,14 +563,14 @@ export function Composer(props: {
                   mr: isDesktop ? 1 : 0.25,
                   display: 'flex', flexDirection: 'column', gap: isDesktop ? 1 : 0.25,
                 }}>
-                  {isDesktop && <ButtonMicMemo variant={micVariant} color={micColor} onClick={handleToggleMic} noBackground={!isRecordingSpeech} />}
+                  { /* isDesktop && <ButtonMicMemo variant={micVariant} color={micColor} onClick={handleToggleMic} noBackground={!isRecordingSpeech} /> */  }
 
-                  {micIsRunning && (
+                  { /* micIsRunning && (
                     <ButtonMicContinuationMemo
                       variant={micContinuation ? 'solid' : 'soft'} color={micContinuation ? 'primary' : 'neutral'} sx={{ background: micContinuation ? undefined : 'none' }}
                       onClick={handleToggleMicContinuation}
                     />
-                  )}
+                  )  */ }
                 </Box>
               )}
 
@@ -611,7 +614,7 @@ export function Composer(props: {
                 >
                   {isDragging && <AttachFileIcon sx={{ width: 40, height: 40, pointerEvents: 'none' }} />}
                   {isDragging && <Typography level='title-sm' sx={{ pointerEvents: 'none' }}>
-                    I will hold on to this for you
+                    暂存
                   </Typography>}
                 </Card>
               )}
@@ -638,12 +641,12 @@ export function Composer(props: {
             <Box sx={{ display: 'flex' }}>
 
               {/* [mobile] bottom-corner secondary button */}
-              {isMobile && (isChat
+              {/*isMobile && (isChat
                   ? <ButtonCall isMobile disabled={!props.conversationId || !chatLLMId} onClick={handleCallClicked} sx={{ mr: { xs: 1, md: 2 } }} />
                   : isDraw
                     ? <ButtonOptionsDraw isMobile onClick={handleDrawOptionsClicked} sx={{ mr: { xs: 1, md: 2 } }} />
                     : <IconButton disabled sx={{ mr: { xs: 1, md: 2 } }} />
-              )}
+              )*/}
 
               {/* Responsive Send/Stop buttons */}
               <ButtonGroup
@@ -668,7 +671,7 @@ export function Composer(props: {
                     }
                   >
                     {micContinuation && 'Voice '}
-                    {isAppend ? 'Write' : isReAct ? 'ReAct' : isDraw ? 'Draw' : 'Chat'}
+                    {isAppend ? 'Write' : isReAct ? 'ReAct' : isDraw ? '绘制' : '发送'}
                   </Button>
                 ) : (
                   <Button
@@ -678,7 +681,7 @@ export function Composer(props: {
                     endDecorator={<StopOutlinedIcon sx={{ fontSize: 18 }} />}
                     sx={{ animation: `${animationStopEnter} 0.1s ease-out` }}
                   >
-                    Stop
+                    停止
                   </Button>
                 )}
 
@@ -706,10 +709,10 @@ export function Composer(props: {
             {isDesktop && <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: 1, justifyContent: 'flex-end' }}>
 
               {/* [desktop] Call secondary button */}
-              {isChat && <ButtonCall disabled={!props.conversationId || !chatLLMId} onClick={handleCallClicked} />}
+              {/* isChat && <ButtonCall disabled={!props.conversationId || !chatLLMId} onClick={handleCallClicked} /> */ }
 
               {/* [desktop] Draw Options secondary button */}
-              {isDraw && <ButtonOptionsDraw onClick={handleDrawOptionsClicked} />}
+              {/* isDraw && <ButtonOptionsDraw onClick={handleDrawOptionsClicked} /> */ }
 
             </Box>}
 

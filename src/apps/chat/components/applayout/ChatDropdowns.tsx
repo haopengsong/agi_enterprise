@@ -19,8 +19,8 @@ export function ChatDropdowns(props: {
 
   // state
   const { chatLLMDropdown } = useChatLLMDropdown();
-  const { personaDropdown } = usePersonaIdDropdown(props.conversationId);
-  const { folderDropdown } = useFolderDropdown(props.conversationId);
+  // const { personaDropdown } = usePersonaIdDropdown(props.conversationId);
+  //const { folderDropdown } = useFolderDropdown(props.conversationId);
 
   // external state
   const labsSplitBranching = useUXLabsStore(state => state.labsSplitBranching);
@@ -28,13 +28,13 @@ export function ChatDropdowns(props: {
   return <>
 
     {/* Persona selector */}
-    {personaDropdown}
+    { /* personaDropdown */ }
 
     {/* Model selector */}
     {chatLLMDropdown}
 
     {/* Folder selector */}
-    {folderDropdown}
+    {/* folderDropdown */ }
 
     {/* Split Panes button */}
     {labsSplitBranching && <IconButton

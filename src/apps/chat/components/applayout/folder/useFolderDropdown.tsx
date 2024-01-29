@@ -67,7 +67,7 @@ export function useFolderDropdown(conversationId: DConversationId | null) {
         items={folderItems}
         value={currentFolderId}
         onChange={handleFolderChange}
-        placeholder='Select a folder'
+        placeholder='选择文件夹'
         showSymbols
       />
     );

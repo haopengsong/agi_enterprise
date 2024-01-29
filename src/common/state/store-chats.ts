@@ -37,7 +37,7 @@ export function createDConversation(systemPurposeId?: SystemPurposeId): DConvers
   return {
     id: uuidv4(),
     messages: [],
-    systemPurposeId: systemPurposeId || defaultSystemPurposeId,
+    systemPurposeId:  defaultSystemPurposeId,
     tokenCount: 0,
     created: Date.now(),
     updated: Date.now(),

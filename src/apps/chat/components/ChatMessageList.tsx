@@ -174,7 +174,7 @@ export function ChatMessageList(props: {
   const filteredMessages = conversationMessages
     .filter(m => m.role !== 'system' || showSystemMessages); // hide the System message if the user choses to
 
-
+  /*
   if (!filteredMessages.length)
     return (
       <Box sx={{ ...props.sx }}>
@@ -183,6 +183,7 @@ export function ChatMessageList(props: {
           : <InlineError severity='info' error='Select a conversation' sx={{ m: 2 }} />}
       </Box>
     );
+    */
 
   return (
     <List sx={{

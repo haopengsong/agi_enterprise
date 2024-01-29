@@ -17,9 +17,9 @@ interface ChatModeDescription {
 }
 
 const ChatModeItems: { [key in ChatModeId]: ChatModeDescription } = {
-  'generate-text': {
-    label: 'Chat',
-    description: 'Persona replies',
+    'generate-text': {
+    label: '对话',
+    description: '问答聊天',
   },
   'append-user': {
     label: 'Write',
@@ -66,6 +66,7 @@ export function ChatModeMenu(props: {
 
     {/* ChatMode items */}
     {Object.entries(ChatModeItems)
+    .filter(([key, data]) => !data.label.toLowerCase().includes('reason') && !data.label.toLowerCase().includes('write'))
       .map(([key, data]) =>
         <MenuItem key={'chat-mode-' + key} onClick={() => props.onSetChatModeId(key as ChatModeId)}>
           <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 2 }}>

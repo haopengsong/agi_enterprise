@@ -53,7 +53,7 @@ export function createConversationFromJsonV1(part: ExportedConversationJsonV1 & 
   const restored: DConversation = {
     id: part.id,
     messages: part.messages,
-    systemPurposeId: part.systemPurposeId || defaultSystemPurposeId,
+    systemPurposeId: defaultSystemPurposeId,
     ...(part.userTitle && { userTitle: part.userTitle }),
     ...(part.autoTitle && { autoTitle: part.autoTitle }),
     tokenCount: part.tokenCount || 0,

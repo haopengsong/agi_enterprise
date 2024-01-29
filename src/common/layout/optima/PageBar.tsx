@@ -65,6 +65,7 @@ function CommonMenuItems(props: { onClose: () => void }) {
 
     {/* Preferences |...| Dark Mode Toggle */}
     {/*<Tooltip title={<KeyStroke combo='Ctrl + Shift + P' />}>*/}
+    {/*
     <MenuItem onClick={handleShowSettings}>
       <ListItemDecorator><SettingsOutlinedIcon /></ListItemDecorator>
       Preferences
@@ -76,6 +77,7 @@ function CommonMenuItems(props: { onClose: () => void }) {
         {colorMode !== 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
       </IconButton>
     </MenuItem>
+*/}
     {/*</Tooltip>*/}
 
   </>;

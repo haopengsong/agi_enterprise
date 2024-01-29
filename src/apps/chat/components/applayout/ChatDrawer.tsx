@@ -201,8 +201,8 @@ function ChatDrawer(props: {
   return <>
 
     {/* Drawer Header */}
-    <PageDrawerHeader title='Chats' onClose={closeDrawer}>
-      <Tooltip title={enableFolders ? 'Hide Folders' : 'Use Folders'}>
+    <PageDrawerHeader title='对话' onClose={closeDrawer}>
+      <Tooltip title={enableFolders ? '隐藏文件夹' : '显示文件夹'}>
         <IconButton onClick={toggleEnableFolders}>
           {enableFolders ? <FolderOpenOutlinedIcon /> : <FolderOutlinedIcon />}
         </IconButton>
@@ -239,7 +239,7 @@ function ChatDrawer(props: {
         minChars={2}
         onDebounce={setDebouncedSearchQuery}
         debounceTimeout={300}
-        placeholder='Search...'
+        placeholder='搜索对话内容...'
         aria-label='Search'
         sx={{ m: 2 }}
       />
@@ -257,7 +257,7 @@ function ChatDrawer(props: {
             justifyContent: 'space-between',
             gap: 1,
           }}>
-            New chat
+            新建对话
             {/*<KeyStroke combo='Ctrl + Alt + N' sx={props.disableNewButton ? { opacity: 0.5 } : undefined} />*/}
           </Box>
         </ListItemButton>
@@ -297,19 +297,19 @@ function ChatDrawer(props: {
       <ListDivider sx={{ mt: 0 }} />
 
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        { /*
         <ListItemButton onClick={props.onConversationImportDialog} sx={{ flex: 1 }}>
           <ListItemDecorator>
             <FileUploadIcon />
           </ListItemDecorator>
           Import
-          {/*<OpenAIIcon sx={{  ml: 'auto' }} />*/}
         </ListItemButton>
-
+        */}
         <ListItemButton disabled={!nonEmptyChats} onClick={() => props.onConversationExportDialog(props.activeConversationId)} sx={{ flex: 1 }}>
           <ListItemDecorator>
             <FileDownloadIcon />
           </ListItemDecorator>
-          Export
+          导出
         </ListItemButton>
       </Box>
 
@@ -317,7 +317,7 @@ function ChatDrawer(props: {
         <ListItemDecorator>
           <DeleteOutlineIcon />
         </ListItemDecorator>
-        Delete {selectConversationsCount >= 2 ? `all ${selectConversationsCount} chats` : 'chat'}
+        删除 {selectConversationsCount >= 2 ? `个所有 ${selectConversationsCount} 对话` : '对话'}
       </ListItemButton>
 
     </PageDrawerList>

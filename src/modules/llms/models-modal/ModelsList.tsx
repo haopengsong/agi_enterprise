@@ -72,11 +72,15 @@ function ModelItem(props: {
         {/* --> */}
         <Box sx={{ flex: 1 }} />
 
+        {
+        /*
         {props.chipChat && <Chip size='sm' variant='plain' sx={{ boxShadow: 'sm' }}>chat</Chip>}
 
         {props.chipFast && <Chip size='sm' variant='plain' sx={{ boxShadow: 'sm' }}>fast</Chip>}
 
         {props.chipFunc && <Chip size='sm' variant='plain' sx={{ boxShadow: 'sm' }}>𝑓n</Chip>}
+        */
+        }
 
         {llm.hidden && (
           <IconButton aria-label='Unhide' size='sm' onClick={handleUnhide}>
@@ -84,9 +88,11 @@ function ModelItem(props: {
           </IconButton>
         )}
 
+        { /*
         <IconButton aria-label='Configure LLM' size='sm' onClick={handleClick}>
           <SettingsOutlinedIcon />
         </IconButton>
+        */ }
 
       </ListItemButton>
     </ListItem>
@@ -124,10 +130,10 @@ export function ModelsList(props: {
   // generate the list items, prepending headers when necessary
   const items: React.JSX.Element[] = [];
   for (const llm of llms) {
-
+    if ( items.length == 1 || llm.hidden ) continue;
     // prepend label if changing source
     const groupLabel = llm._source.label;
-    if ((multiSources || showAllSources) && groupLabel !== lastGroupLabel) {
+    if ( !llm.hidden && (multiSources || showAllSources) && groupLabel !== lastGroupLabel) {
       lastGroupLabel = groupLabel;
       items.push(
         <ListItem key={'lab-' + llm._source.id} sx={{ justifyContent: 'center' }}>
@@ -147,7 +153,7 @@ export function ModelsList(props: {
         chipChat={llm.id === chatLLMId}
         chipFast={llm.id === fastLLMId}
         chipFunc={llm.id === funcLLMId}
-        onModelClicked={handleModelClicked}
+        onModelClicked={ () => void 0 }
         onModelSetHidden={handleModelSetHidden}
       />,
     );

@@ -65,7 +65,7 @@ export function ModelsModal(props: { suspendAutoModelsSetup?: boolean }) {
 
     {/* Sources Setup */}
     {showModelsSetup && <GoodModal
-      title={<>Configure <b>AI Models</b></>}
+      title={<><b>配置模型</b></>}
       startButton={
         multiSource ? <Checkbox
           label='All Services' sx={{ my: 'auto' }}
@@ -81,7 +81,7 @@ export function ModelsModal(props: { suspendAutoModelsSetup?: boolean }) {
 
       <ModelsSourceSelector selectedSourceId={selectedSourceId} setSelectedSourceId={setSelectedSourceId} />
 
-      {!!activeSource && <Divider />}
+      { /* !!activeSource && <Divider /> */ }
 
       {!!activeSource && (
         <Box sx={{ display: 'grid', gap: 'var(--Card-padding)' }}>

@@ -8,7 +8,7 @@ import { withLayout } from '~/common/layout/withLayout';
 
 export default function IndexPage() {
   // show the News page if there are unseen updates
-  useRedirectToNewsOnUpdates();
+  // useRedirectToNewsOnUpdates();
 
   // TODO: This Index page will point to the Dashboard (or a landing page) soon
   // For now it offers the chat experience, but this will change. #299

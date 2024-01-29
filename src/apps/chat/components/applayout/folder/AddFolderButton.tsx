@@ -65,7 +65,7 @@ export function AddFolderButton() {
         // fontWeight: 400,
       }}
     >
-      New folder
+      新建文件夹
     </Button>
   );
 }

@@ -46,10 +46,10 @@ export function OpenAISourceSetup(props: { sourceId: DModelSourceId }) {
   return <>
 
     <FormInputKey
-      id='openai-key' label='API Key'
+      id='openai-key' label='API接口密钥'
       rightLabel={<>{needsUserKey
         ? !oaiKey && <><Link level='body-sm' href='https://platform.openai.com/account/api-keys' target='_blank'>create Key</Link> and <Link level='body-sm' href='https://openai.com/waitlist/gpt-4-api' target='_blank'>apply to GPT-4</Link></>
-        : '✔️ already set in server'
+        : '✔️ 已连接'
       } {oaiKey && keyValid && <Link level='body-sm' href='https://platform.openai.com/account/usage' target='_blank'>check usage</Link>}
       </>}
       value={oaiKey} onChange={value => updateSetup({ oaiKey: value })}

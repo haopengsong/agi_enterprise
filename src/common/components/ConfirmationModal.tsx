@@ -19,7 +19,7 @@ export function ConfirmationModal(props: {
   return (
     <GoodModal
       open={props.open === undefined ? true : props.open}
-      title={props.title || 'Confirmation'}
+      title={props.title || '确认'}
       titleStartDecorator={<WarningRoundedIcon sx={{ color: 'danger.solidBg' }} />}
       onClose={props.onClose}
       hideBottomClose
@@ -30,7 +30,7 @@ export function ConfirmationModal(props: {
       </Typography>
       <Box sx={{ display: 'flex', gap: 1, justifyContent: 'flex-end', mt: 2 }}>
         <Button autoFocus variant='plain' color='neutral' onClick={props.onClose}>
-          Cancel
+          取消
         </Button>
         <Button variant='solid' color='danger' onClick={props.onPositive} sx={{ lineHeight: '1.5em' }}>
           {props.positiveActionText}

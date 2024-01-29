@@ -539,25 +539,25 @@ export function AppChat() {
     )}
 
     {/* [confirmation] Reset Conversation */}
-    {!!clearConversationId && (
+        {!!clearConversationId && (
       <ConfirmationModal
         open
         onClose={() => setClearConversationId(null)}
         onPositive={handleConfirmedClearConversation}
-        confirmationText='Are you sure you want to discard all messages?'
-        positiveActionText='Clear conversation'
+        confirmationText='确定删除所有对话?'
+        positiveActionText='清空'
       />
     )}
-
+    
     {/* [confirmation] Delete All */}
     {!!deleteConversationId && <ConfirmationModal
       open onClose={() => setDeleteConversationId(null)} onPositive={handleConfirmedDeleteConversation}
       confirmationText={deleteConversationId === SPECIAL_ID_WIPE_ALL
-        ? `Are you absolutely sure you want to delete ${activeFolderId ? 'ALL conversations in this folder' : 'ALL conversations'}? This action cannot be undone.`
-        : 'Are you sure you want to delete this conversation?'}
-      positiveActionText={deleteConversationId === SPECIAL_ID_WIPE_ALL
-        ? `Yes, delete all ${activeFolderConversationsCount} conversations`
-        : 'Delete conversation'}
+        ? `确定要删除 ${activeFolderId ? '文档中的对话' : '所有对话'}? 删除后不可恢复.`
+        : '确定删除这个对话?'}
+            positiveActionText={deleteConversationId === SPECIAL_ID_WIPE_ALL
+        ? `确定删除 ${activeFolderConversationsCount} 中的对话`
+        : '删除对话'}
     />}
   </>;
 }
