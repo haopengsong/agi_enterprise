@@ -8,8 +8,8 @@ import { KeyStroke } from '~/common/components/KeyStroke';
 
 const pasteClipboardLegend =
   <Box sx={{ px: 1, py: 0.75, lineHeight: '1.5rem' }}>
-    <b>Attach clipboard 📚</b><br />
-    Auto-converts to the best types<br />
+    <b>粘贴板 📚</b><br />
+    自动转换格式<br />
     <KeyStroke combo='Ctrl + Shift + V' sx={{ mt: 1, mb: 0.5 }} />
   </Box>;
 
@@ -25,7 +25,7 @@ function ButtonAttachClipboard(props: { isMobile?: boolean, onClick: () => void 
     <Tooltip disableInteractive variant='solid' placement='top-start' title={pasteClipboardLegend}>
       <Button fullWidth variant='plain' color='neutral' startDecorator={<ContentPasteGoIcon />} onClick={props.onClick}
               sx={{ justifyContent: 'flex-start' }}>
-        Paste
+                粘贴
       </Button>
     </Tooltip>
   );

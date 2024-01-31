@@ -157,6 +157,7 @@ export function Composer(props: {
     if (!conversationId)
       return false;
 
+    // 
     // get attachments
     const multiPartMessage = llmAttachments.getAttachmentsOutputs(composerText || null);
     if (!multiPartMessage.length)
@@ -473,10 +474,10 @@ export function Composer(props: {
 
 
                   {/* Responsive Paste button */}
-                  { /* supportsClipboardRead && <MenuItem>
+                  {  supportsClipboardRead && <MenuItem> 
                     <ButtonAttachClipboardMemo onClick={attachAppendClipboardItems} />
                 </MenuItem> 
-                */ }
+                }
                 </Menu>
               </Dropdown>
 
