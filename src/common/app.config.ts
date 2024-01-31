@@ -9,11 +9,11 @@
 export const Brand = {
   Title: {
     Base: 'xGPT',
-    Common: (process.env.NODE_ENV === 'development' ? '[DEV] ' : '') + 'hGPT',
+    Common: (process.env.NODE_ENV === 'development' ? '[DEV] ' : '') + 'xGPT',
   },
   Meta: {
-    Description: 'Launch xGPT to unlock the full potential of AI, with precise control over your data and models. Voice interface, AI personas, advanced features, and fun UX.',
-    SiteName: 'xGPT | Precision AI for You',
+    Description: 'Launch xGPT to unlock the full potential of AI',
+    SiteName: 'xGPT - AI for everyone',
     ThemeColor: '#32383E',
     TwitterSite: '@',
   },

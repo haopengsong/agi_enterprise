@@ -130,6 +130,16 @@ export function PageBar(props: { component: React.ElementType, currentApp?: NavI
       sx={props.sx}
     >
 
+     <Box sx={{
+        flexGrow: 4,
+        minHeight: 'var(--Bar)',
+        display: 'flex', flexFlow: 'row wrap', justifyContent: 'center', alignItems: 'center',
+        my: 'auto',
+      }}>
+        <div>AI生成内容必须经过确认才可参考，请勿直接采用</div>
+      </Box>
+
+
       {/* [Mobile] Drawer button */}
       {(!!props.isMobile || !checkVisibleNav(props.currentApp)) && (
         <InvertedBarCornerItem>
@@ -149,7 +159,7 @@ export function PageBar(props: { component: React.ElementType, currentApp?: NavI
 
       {/* Center Items */}
       <Box sx={{
-        flexGrow: 1,
+        flexGrow: 6,
         minHeight: 'var(--Bar)',
         display: 'flex', flexFlow: 'row wrap', justifyContent: 'center', alignItems: 'center',
         my: 'auto',
