@@ -131,11 +131,6 @@ export function ModelsList(props: {
   const items: React.JSX.Element[] = [];
   for (const llm of llms) {
     if ( llm.hidden ) continue;
-    if ( llm.label.includes('GPT4') || llm.label.includes('GPT-4') ) continue;
-    if ( llm.label.includes('3.5') ) {
-      // set llm label to GPT-3.5
-      llm.label = 'GPT-3.5 Turbo';
-    }
     // prepend label if changing source
     const groupLabel = llm._source.label;
     if ( !llm.hidden && (multiSources || showAllSources) && groupLabel !== lastGroupLabel) {

@@ -133,7 +133,7 @@ const _knownOpenAIChatModels: ManualMappings = [
   },
   {
     idPrefix: 'gpt-3.5-turbo-1106',
-    label: '3.5-Turbo (1106)',
+    label: 'GPT-3.5-Turbo (1106)',
     description: 'The latest GPT-3.5 Turbo model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more.',
     contextWindow: 16385,
     maxCompletionTokens: 4096,

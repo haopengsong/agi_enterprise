@@ -15,9 +15,7 @@ export function useLlmUpdateModels<TSourceSetup, TAccess, TLLMOptions>(vendor: I
 
 function updateModelsFn<TSourceSetup>(data: { models: ModelDescriptionSchema[] }, source: DModelSource<TSourceSetup>) {
   useModelsStore.getState().setLLMs(
-    //filter models whose label contains GPT-4 or GPT4
     data.models
-      //.filter(model => model.label.toLowerCase().includes('gpt-4') || model.label.toLowerCase().includes('gpt4'))
       .map(model => modelDescriptionToDLLMOpenAIOptions(model, source)),
     source.id,
   );
