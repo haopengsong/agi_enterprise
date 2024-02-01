@@ -27,13 +27,16 @@ function AppBarLLMDropdown(props: {
   let prevSourceId: DModelSourceId | null = null;
 
   for (const llm of props.llms) {
-    // console.log( llm.label );
+    console.log( llm.label );
     // continue if the llm is GPT4
     if ( llm.label.includes('GPT4') || llm.label.includes('GPT-4') )  
       continue;
     // continue if the title of llm contains 1106 but not with 3.5
-    if ( (llm.label.includes('1106') || llm.label.includes('0613') ) && !llm.label.includes('3.5'))
+    if ( !llm.label.includes('3.5') && ( llm.label.includes('1106') || llm.label.includes('0613') ) )
       continue; 
+    if ( llm.label.includes('3.5') ) {
+      llm.label = 'GPT-3.5 Turbo';
+    }
     // break when llmItems has size 1
     if (Object.keys(llmItems).length === 2)
       break;
