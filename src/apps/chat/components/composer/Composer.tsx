@@ -474,10 +474,10 @@ export function Composer(props: {
 
 
                   {/* Responsive Paste button */}
-                  {  supportsClipboardRead && <MenuItem> 
+                  {  /* supportsClipboardRead && <MenuItem> 
                     <ButtonAttachClipboardMemo onClick={attachAppendClipboardItems} />
                 </MenuItem> 
-                }
+                */ }
                 </Menu>
               </Dropdown>
 
@@ -493,7 +493,7 @@ export function Composer(props: {
               <ButtonAttachFileMemo onAttachFilePicker={handleAttachFilePicker} />
 
               {/* Responsive Paste button */}
-              {  supportsClipboardRead && <ButtonAttachClipboardMemo onClick={attachAppendClipboardItems} />  }
+              {  /* supportsClipboardRead && <ButtonAttachClipboardMemo onClick={attachAppendClipboardItems} />  */ }
 
               {/* Responsive Camera OCR button */}
               { /* labsCameraDesktop && <ButtonAttachCameraMemo onOpenCamera={openCamera} /> */ }

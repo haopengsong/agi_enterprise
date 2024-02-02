@@ -23,6 +23,7 @@ import WorkspacesIcon from '@mui/icons-material/Workspaces';
 import WorkspacesOutlinedIcon from '@mui/icons-material/WorkspacesOutlined';
 // Link icons
 import GitHubIcon from '@mui/icons-material/GitHub';
+import TravelExploreSharpIcon from '@mui/icons-material/TravelExploreSharp';
 import { DiscordIcon } from '~/common/components/icons/DiscordIcon';
 // Modal icons
 import BuildCircleIcon from '@mui/icons-material/BuildCircle';
@@ -96,6 +97,7 @@ export const navItems: {
       type: 'app',
       route: '/',
     },
+    /*
     {
       name: 'Call',
       barTitle: 'Voice Calls',
@@ -184,6 +186,7 @@ export const navItems: {
       hideBar: true,
       hideDrawer: true,
     },
+    */
   ],
 
   // Modals
@@ -210,17 +213,19 @@ export const navItems: {
     //   icon: TwitterIcon,
     //   href: 'https://twitter.com',
     // },
+    /*
     {
       type: 'extLink',
       name: 'Discord',
       icon: DiscordIcon,
       href: Brand.URIs.SupportInvite,
     },
+    */
     {
       type: 'extLink',
-      name: 'GitHub',
-      icon: GitHubIcon,
-      href: Brand.URIs.OpenRepo,
+      name: 'SearchEngine',
+      icon: TravelExploreSharpIcon,
+      href: 'https://www.baidu.com',
     },
   ],
 
