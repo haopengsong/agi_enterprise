@@ -11,7 +11,7 @@ const _knownOpenAIChatModels: ManualMappings = [
   // GPT4 Vision
   {
     idPrefix: 'gpt-4-vision-preview',
-    label: 'GPT-4 Turbo · Vision',
+    label: 'GLM4',
     description: 'GPT-4 Turbo model featuring improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Returns a maximum of 4,096 output tokens.',
     contextWindow: 128000,
     maxCompletionTokens: 4096,
@@ -23,7 +23,7 @@ const _knownOpenAIChatModels: ManualMappings = [
   // GPT4 Turbo
   {
     idPrefix: 'gpt-4-0125-preview',
-    label: 'GPT-4 Turbo (0125)',
+    label: 'GLM4',
     description: 'The latest GPT-4 model intended to reduce cases of “laziness” where the model doesn’t complete a task.',
     contextWindow: 128000,
     maxCompletionTokens: 4096,
@@ -32,7 +32,7 @@ const _knownOpenAIChatModels: ManualMappings = [
   },
   {
     idPrefix: 'gpt-4-1106-preview',
-    label: 'GPT-4 Turbo (1106)',
+    label: 'GLM4',
     description: '128k context, fresher knowledge, cheaper than GPT-4.',
     contextWindow: 128000,
     maxCompletionTokens: 4096,
@@ -42,7 +42,7 @@ const _knownOpenAIChatModels: ManualMappings = [
   },
   {
     idPrefix: 'gpt-4-turbo-preview',
-    label: '🔗 GPT-4 Turbo → 0125', // '4-Turbo → 🔗 0125',
+    label: 'GLM4',
     description: 'Currently points to gpt-4-0125-preview.',
     symLink: 'gpt-4-0125-preview',
     hidden: true,
@@ -55,15 +55,16 @@ const _knownOpenAIChatModels: ManualMappings = [
   // GPT4-32k's
   {
     idPrefix: 'gpt-4-32k-0613',
-    label: 'GPT-4 32k (0613)',
+    label: 'GLM4',
     description: 'Snapshot of gpt-4-32 from June 13th 2023.',
     contextWindow: 32768,
     interfaces: [LLM_IF_OAI_Chat],
+    hidden: true,
     isLatest: true,
   },
   {
     idPrefix: 'gpt-4-32k-0314',
-    label: 'GPT-4 32k (0314)',
+    label: 'GLM4',
     description: 'Snapshot of gpt-4-32 from March 14th 2023. Will be deprecated on June 13th 2024 at the earliest.',
     contextWindow: 32768,
     interfaces: [LLM_IF_OAI_Chat],
@@ -71,7 +72,7 @@ const _knownOpenAIChatModels: ManualMappings = [
   },
   {
     idPrefix: 'gpt-4-32k',
-    label: '🔗 GPT-4 32k → 0613', // 'GPT-4-32k → 🔗 0613',
+    label: 'GLM4',
     description: 'Currently points to gpt-4-32k-0613.',
     symLink: 'gpt-4-32k-0613',
     // copied
@@ -83,7 +84,7 @@ const _knownOpenAIChatModels: ManualMappings = [
   // GPT4's
   {
     idPrefix: 'gpt-4-0613',
-    label: 'GPT-4 (0613)',
+    label: 'GLM4',
     description: 'Snapshot of gpt-4 from June 13th 2023 with function calling data. Data up to Sep 2021.',
     contextWindow: 8192,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
@@ -99,7 +100,7 @@ const _knownOpenAIChatModels: ManualMappings = [
   },
   {
     idPrefix: 'gpt-4',
-    label: '🔗 GPT-4 → 0613', // 'GPT-4 → 🔗 0613',
+    label: 'GLM4',
     description: 'Currently points to gpt-4-0613.',
     symLink: 'gpt-4-0613',
     // copied
