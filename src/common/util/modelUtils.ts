@@ -6,11 +6,11 @@ function getModelFromFile(filePath: string): string {
 
 export function prettyBaseModel(model: string | undefined): string {
   if (!model) return '';
-  if (model.includes('gpt-4-vision-preview')) return 'GPT-4 Vision';
+  if (model.includes('gpt-4-vision-preview')) return 'GLM4';
   if (model.includes('gpt-4-1106-preview')) return 'GLM4';
-  if (model.includes('gpt-4-32k')) return 'gpt-4-32k';
-  if (model.includes('gpt-4')) return 'gpt-4';
-  if (model.includes('gpt-3.5-turbo-instruct')) return '3.5 Turbo Instruct';
+  if (model.includes('gpt-4-32k')) return 'GLM4';
+  if (model.includes('gpt-4')) return 'GLM4';
+  if (model.includes('gpt-3.5-turbo-instruct')) return 'GLM3';
   if (model.includes('gpt-3.5-turbo-1106')) return 'GLM3';
   if (model.includes('gpt-3.5-turbo-16k')) return 'GLM3';
   if (model.includes('gpt-3.5-turbo')) return 'GLM3';
