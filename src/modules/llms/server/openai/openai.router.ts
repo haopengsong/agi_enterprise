@@ -188,7 +188,7 @@ export const llmOpenAIRouter = createTRPCRouter({
             .filter(model => !model.id.includes('gpt-4') && !model.id.includes('gpt4'))
             
             // only keep gpt-3.5-1106 models
-            .filter(model => model.id.includes('gpt-3.5') && model.id.includes('1106'))
+            .filter(model => model.id.includes('gpt-3.5') && model.id.includes('0125'))
 
             // to model description
             .map((model): ModelDescriptionSchema => openAIModelToModelDescription(model.id, model.created))
