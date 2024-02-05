@@ -20,6 +20,9 @@ import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 import SmartToyOutlinedIcon from '@mui/icons-material/SmartToyOutlined';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import VerticalAlignBottomIcon from '@mui/icons-material/VerticalAlignBottom';
+import QuickreplyOutlinedIcon from '@mui/icons-material/QuickreplyOutlined';
+import SpatialAudioOffOutlinedIcon from '@mui/icons-material/SpatialAudioOffOutlined';
+
 
 import { CloseableMenu } from '~/common/components/CloseableMenu';
 import { DMessage } from '~/common/state/store-chats';
@@ -76,10 +79,13 @@ export function makeAvatar(messageAvatar: string | null, messageRole: DMessage['
   const mascotSx = size === 'sm' ? avatarIconSx : { width: 64, height: 64 };
   switch (messageRole) {
     case 'system':
-      return <Avatar src={'icons/openai-logomark.svg'} sx={avatarIconSx} />;            // https://www.svgrepo.com/show/306500/openai.svg
+      //return <Avatar src={'icons/openai-logomark.svg'} sx={avatarIconSx} />;            // https://www.svgrepo.com/show/306500/openai.svg
+      return <QuickreplyOutlinedIcon  sx={avatarIconSx} />
 
     case 'user':
-      return <Face6Icon sx={avatarIconSx} />;            // https://www.svgrepo.com/show/306500/openai.svg
+      // return <Face6Icon sx={avatarIconSx} />;            // https://www.svgrepo.com/show/306500/openai.svg
+      return <SpatialAudioOffOutlinedIcon sx={avatarIconSx} />
+      
 
     case 'assistant':
       // typing gif (people seem to love this, so keeping it after april fools')
@@ -118,7 +124,8 @@ export function makeAvatar(messageAvatar: string | null, messageRole: DMessage['
       // default assistant avatar
       //return <SmartToyOutlinedIcon sx={avatarIconSx} />; // https://mui.com/static/images/avatar/2.jpg
       */
-      return <Avatar src={'icons/openai-logomark.svg'} sx={avatarIconSx} />;            // https://www.svgrepo.com/show/306500/openai.svg
+      //return <Avatar src={'icons/openai-logomark.svg'} sx={avatarIconSx} />;            // https://www.svgrepo.com/show/306500/openai.svg
+      return <QuickreplyOutlinedIcon  sx={avatarIconSx} />
   }
 
   return <Avatar alt={messageSender} />;
