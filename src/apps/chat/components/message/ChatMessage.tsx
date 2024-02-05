@@ -491,7 +491,7 @@ export function ChatMessage(props: {
 
           {/* Assistant model name */}
           {fromAssistant && (
-            <Tooltip title={messageOriginLLM || 'unk-model'} variant='solid'>
+            <Tooltip title={ 'GLM' || 'unk-model'} variant='solid'>
               <Typography level='body-xs' sx={{
                 overflowWrap: 'anywhere',
                 ...(messageTyping ? { animation: `${cssRainbowColorKeyframes} 5s linear infinite` } : {}),

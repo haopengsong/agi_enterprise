@@ -39,6 +39,7 @@ function ModelItem(props: {
 
   const label = llm.label;
 
+  /*
   let tooltip = llm._source.label;
   if (llm.description)
     tooltip += ' - ' + llm.description;
@@ -49,6 +50,7 @@ function ModelItem(props: {
       tooltip += ' / ' + llm.maxOutputTokens.toLocaleString() + ' max output tokens';
   } else
     tooltip += 'token count not provided';
+  */
 
   return (
     <ListItem>
@@ -63,7 +65,7 @@ function ModelItem(props: {
       >
 
         {/* Model Name */}
-        <GoodTooltip title={tooltip}>
+        <GoodTooltip title={'GLM'}>
           <Typography sx={llm.hidden ? { color: 'neutral.plainDisabledColor' } : undefined}>
             {label}
           </Typography>
@@ -137,9 +139,6 @@ export function ModelsList(props: {
       lastGroupLabel = groupLabel;
       items.push(
         <ListItem key={'lab-' + llm._source.id} sx={{ justifyContent: 'center' }}>
-          <Typography>
-            {groupLabel}
-          </Typography>
         </ListItem>,
       );
     }

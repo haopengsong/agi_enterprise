@@ -124,8 +124,8 @@ const _knownOpenAIChatModels: ManualMappings = [
   {
     // NOTE: speculation from the https://openai.com/blog/new-embedding-models-and-api-updates post; hasn't been released yet
     idPrefix: 'gpt-3.5-turbo-0125',
-    label: '3.5-Turbo (0125)',
-    description: 'Snapshot of gpt-3.5-turbo-16k from January 25th 2023.',
+    label: 'GLM3',
+    description: 'Snapshot of GLM3 from 2023.',
     contextWindow: 16385,
     maxCompletionTokens: 4096,
     interfaces: [LLM_IF_OAI_Chat],

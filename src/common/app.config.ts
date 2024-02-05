@@ -8,21 +8,21 @@
  */
 export const Brand = {
   Title: {
-    Base: 'xGPT',
-    Common: (process.env.NODE_ENV === 'development' ? '[DEV] ' : '') + 'xGPT',
+    Base: 'xGLM',
+    Common: (process.env.NODE_ENV === 'development' ? '[DEV] ' : '') + 'xGLM',
   },
   Meta: {
-    Description: 'Launch xGPT to unlock the full potential of AI',
-    SiteName: 'xGPT - AI for everyone',
+    Description: 'Launch xGLM to unlock the full potential of AI',
+    SiteName: 'xGLM - The Generative Large lang Model for everyone',
     ThemeColor: '#32383E',
     TwitterSite: '@',
   },
   URIs: {
-        Home: 'https://www.google.com',
-    CardImage: 'https://www.google.com',
-    OpenRepo: 'https://www.google.com',
-    OpenProject: 'https://www.google.com',
-    SupportInvite: 'https://www.google.com',
-    PrivacyPolicy: 'https://www.google.com',
+        Home: 'https://www.baidu.com',
+    CardImage: 'https://www.baidu.com',
+    OpenRepo: 'https://www.baidu.com',
+    OpenProject: 'https://www.baidu.com',
+    SupportInvite: 'https://www.baidu.com',
+    PrivacyPolicy: 'https://www.baidu.com',
   },
 };

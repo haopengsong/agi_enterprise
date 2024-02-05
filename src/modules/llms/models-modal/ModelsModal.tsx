@@ -79,7 +79,7 @@ export function ModelsModal(props: { suspendAutoModelsSetup?: boolean }) {
       }}
     >
 
-      <ModelsSourceSelector selectedSourceId={selectedSourceId} setSelectedSourceId={setSelectedSourceId} />
+      { /* <ModelsSourceSelector selectedSourceId={selectedSourceId} setSelectedSourceId={setSelectedSourceId} /> */ }
 
       { /* !!activeSource && <Divider /> */ }
 
