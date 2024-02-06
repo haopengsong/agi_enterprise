@@ -7,6 +7,7 @@ import { fetchTextOrTRPCError } from '~/server/api/trpc.serverutils';
 import { chatGptParseConversation, chatGptSharedChatSchema } from './chatgpt';
 import { postToPasteGGOrThrow, publishToInputSchema, publishToOutputSchema } from './pastegg';
 import { storageGetProcedure, storageMarkAsDeletedProcedure, storagePutProcedure, storageUpdateDeletionKeyProcedure } from './link';
+import { storagePromptProcedure } from './prompts';
 
 
 export const importChatGptShareInputSchema = z.union([
@@ -49,6 +50,9 @@ export const tradeRouter = createTRPCRouter({
         conversationId: data.props.pageProps.sharedConversationId,
       };
     }),
+
+  // Write prompts to storage
+  storagePrompt: storagePromptProcedure,
 
   /**
    * Write an object to storage, and return the ID, owner, and deletion key

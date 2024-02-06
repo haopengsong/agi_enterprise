@@ -7,6 +7,7 @@ function getModelFromFile(filePath: string): string {
 export function prettyBaseModel(model: string | undefined): string {
   if (!model) return '';
   if (model.includes('gpt-4-vision-preview')) return 'GLM4';
+  if (model.includes('gpt-4-0125-preview')) return 'GLM4';
   if (model.includes('gpt-4-1106-preview')) return 'GLM4';
   if (model.includes('gpt-4-32k')) return 'GLM4';
   if (model.includes('gpt-4')) return 'GLM4';

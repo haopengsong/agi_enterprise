@@ -59,6 +59,7 @@ import { TokenBadgeMemo } from './TokenBadge';
 import { TokenProgressbarMemo } from './TokenProgressbar';
 import { useComposerStartupText } from './store-composer';
 
+import { apiAsyncNode } from '~/common/util/trpc.client';
 
 export const animationStopEnter = keyframes`
     from {
@@ -153,10 +154,16 @@ export function Composer(props: {
 
   const { conversationId, onAction } = props;
 
-  const handleSendAction = React.useCallback((_chatModeId: ChatModeId, composerText: string): boolean => {
+  const handleSendAction = React.useCallback(async (_chatModeId: ChatModeId, composerText: string): Promise<boolean> => {
     if (!conversationId)
       return false;
-
+    console.log( composerText );
+    await apiAsyncNode.trade.storagePrompt.mutate({
+      // storage of prompts
+      ownerId: conversationId,
+      prompt: composerText
+      
+    });
     // 
     // get attachments
     const multiPartMessage = llmAttachments.getAttachmentsOutputs(composerText || null);
