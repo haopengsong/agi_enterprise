@@ -28,7 +28,7 @@ export function ExportChats(props: { config: ExportConfig, onClose: () => void }
 
   // external state
   const enableSharing = backendCaps().hasDB;
-  console.log( enableSharing )
+  //console.log( enableSharing )
 
   // download chats
 

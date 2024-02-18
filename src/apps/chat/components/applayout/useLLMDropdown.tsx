@@ -28,7 +28,7 @@ function AppBarLLMDropdown(props: {
 
   for (const llm of props.llms) {
     // break when llmItems has size 1
-    if (Object.keys(llmItems).length === 1)
+    if (Object.keys(llmItems).length === 2)
       break;
     // filter-out hidden models
     if (!(!llm.hidden || llm.id === props.chatLlmId))

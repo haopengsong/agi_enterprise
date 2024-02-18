@@ -185,10 +185,10 @@ export const llmOpenAIRouter = createTRPCRouter({
             // limit to only 'gpt' and 'non instruct' models
             .filter(model => model.id.includes('gpt') && !model.id.includes('-instruct'))
             // filter model with id containing gpt-4 or gpt4 
-            .filter(model => !model.id.includes('gpt-4') && !model.id.includes('gpt4'))
+            //.filter(model => !model.id.includes('gpt-4') && !model.id.includes('gpt4'))
             
             // only keep gpt-3.5-1106 models
-            .filter(model => model.id.includes('gpt-3.5') && model.id.includes('0125'))
+            .filter(model => ( ( model.id.includes('gpt-3.5') || model.id.includes('gpt-4') ) && model.id.includes('0125'))  )
 
             // to model description
             .map((model): ModelDescriptionSchema => openAIModelToModelDescription(model.id, model.created))
@@ -218,7 +218,8 @@ export const llmOpenAIRouter = createTRPCRouter({
               //   return aCount - bCount;
               // }
               // return bId.localeCompare(aId);
-            });
+            }).reverse();
+
           break;
 
         case 'openrouter':
