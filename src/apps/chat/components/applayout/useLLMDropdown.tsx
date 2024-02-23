@@ -27,7 +27,6 @@ function AppBarLLMDropdown(props: {
   let prevSourceId: DModelSourceId | null = null;
 
   for (const llm of props.llms) {
-    // break when llmItems has size 1
     if (Object.keys(llmItems).length === 2)
       break;
     // filter-out hidden models
