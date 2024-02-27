@@ -19,8 +19,8 @@ interface ModuleDalleStore {
   dalleSize: DalleImageSize,
   setDalleSize: (size: DalleImageSize) => void;
 
-  dalleStyle: 'vivid' | 'natural';
-  setDalleStyle: (style: 'vivid' | 'natural') => void;
+  dalleStyle: 'natural' | 'natural';
+  setDalleStyle: (style: 'natural' | 'natural') => void;
 
   dalleNoRewrite: boolean;
   setDalleNoRewrite: (noRewrite: boolean) => void;
@@ -42,8 +42,8 @@ export const useDalleStore = create<ModuleDalleStore>()(
       dalleSize: DALLE_DEFAULT_IMAGE_SIZE,
       setDalleSize: (dalleSize: DalleImageSize) => set({ dalleSize }),
 
-      dalleStyle: 'vivid',
-      setDalleStyle: (dalleStyle: 'vivid' | 'natural') => set({ dalleStyle }),
+      dalleStyle: 'natural',
+      setDalleStyle: (dalleStyle: 'natural' | 'natural') => set({ dalleStyle }),
 
       dalleNoRewrite: false,
       setDalleNoRewrite: (dalleNoRewrite: boolean) => set({ dalleNoRewrite }),
