@@ -160,7 +160,7 @@ export function Composer(props: {
     }
     if (!conversationId)
       return false;
-    console.log( composerText );
+    // console.log( composerText );
     await apiAsyncNode.trade.storagePrompt.mutate({
       // storage of prompts
       ownerId: conversationId,
