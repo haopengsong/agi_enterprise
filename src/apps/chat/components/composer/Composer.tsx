@@ -155,9 +155,11 @@ export function Composer(props: {
   const { conversationId, onAction } = props;
 
   const handleSendAction = React.useCallback(async (_chatModeId: ChatModeId, composerText: string): Promise<boolean> => {
+    /*
     if ( props.chatLLM?.id.includes( '4' ) ) {
       return false;
     }
+    */
     if (!conversationId)
       return false;
     // console.log( composerText );

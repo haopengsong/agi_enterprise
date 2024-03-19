@@ -23,7 +23,7 @@ const _knownOpenAIChatModels: ManualMappings = [
   // GPT4 Turbo
   {
     idPrefix: 'gpt-4-0125-preview',
-    label: 'GLM4【暂停】',
+    label: 'GLM4',
     description: 'The latest GPT-4 model intended to reduce cases of “laziness” where the model doesn’t complete a task.',
     contextWindow: 128000,
     maxCompletionTokens: 4096,

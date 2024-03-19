@@ -150,9 +150,17 @@ export function AppChat() {
     const chatLLMId = getChatLLMId();
     if (!chatModeId || !conversationId || !chatLLMId) return;
 
-    if ( history.length >= 10 ) {
-      alert("对话条数过长，请新建对话再提问");
-      return;
+    if (chatLLMId.includes('3.5')) {
+      if (history.length >= 12) {
+        alert("对话条数过长，请新建对话再提问");
+        return;
+      }
+    } 
+    else if (chatLLMId.includes('4')) {
+      if (history.length >= 6) {
+        alert("对话条数过长，请新建对话再提问");
+        return;
+      }
     }
 
     // "/command ...": overrides the chat mode
