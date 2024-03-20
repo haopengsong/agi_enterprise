@@ -151,13 +151,13 @@ export function AppChat() {
     if (!chatModeId || !conversationId || !chatLLMId) return;
 
     if (chatLLMId.includes('3.5')) {
-      if (history.length >= 12) {
+      if (history.length >= 16) {
         alert("对话条数过长，请新建对话再提问");
         return;
       }
     } 
     else if (chatLLMId.includes('4')) {
-      if (history.length >= 6) {
+      if (history.length >= 10) {
         alert("对话条数过长，请新建对话再提问");
         return;
       }
